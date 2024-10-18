@@ -1,0 +1,241 @@
+openapi: 3.0.3
+info:
+  title: VecchioServer API
+  version: 1.0.0
+  description: REST API for interacting with vecchiochan
+
+paths:
+  /thread:
+    post:
+      summary: Create new thread
+      description: Create a new thread on a specific board
+      tags:
+        - posting
+      operationId: newThread
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Thread"
+      responses:
+        "200":
+          description: Thread created successfully
+          headers:
+            Content-Type:
+              description: The content type of the response.
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessResponse"
+              example:
+                id: 1
+        "400":
+          description: Invalid request data
+          headers:
+            Content-Type:
+              description: The content type of the response.
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+                example:
+                  error: error
+        "500":
+          description: Failed to create thread
+          headers:
+            Content-Type:
+              description: The content type of the response.
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                error: error
+
+  /reply:
+    post:
+      summary: Post reply
+      description: Post a reply to an existing thread
+      tags:
+        - posting
+      operationId: postReply
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Reply"
+      responses:
+        "200":
+          description: Reply posted successfully
+          headers:
+            Content-Type:
+              description: The content type of the response.
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessResponse"
+              example:
+                id: 1
+        "400":
+          description: Invalid request data
+          headers:
+            Content-Type:
+              description: The content type of the response.
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                error: error
+        "500":
+          description: Failed to post reply
+          headers:
+            Content-Type:
+              description: The content type of the response.
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                error: error
+
+components:
+  schemas:
+    Thread:
+      description: Thread data.
+      type: object
+      required:
+        - board
+      properties:
+        board:
+          type: string
+          description: Board where the thread is to be posted (e.g., 'b').
+          example: b
+        name:
+          type: string
+          description: Name of the poster.
+        email:
+          type: string
+          description: Email of the poster.
+        subject:
+          type: string
+          description: Subject of the thread.
+        spoiler:
+          type: boolean
+          description: Marks attached files as spoiler.
+        body:
+          type: string
+          description: The message of the thread.
+          example: This is a new thread on board /b/
+        embed:
+          type: string
+          description: URL for an embedded media link (YouTube, Spotify...).
+        password:
+          type: string
+          description: Password used to delete or edit the thread.
+        sage:
+          type: boolean
+          description: Replaces email with 'rabbia' and prevents bumping the thread.
+        files:
+          type: array
+          description: Paths of the files to attach to the thread.
+          items:
+            type: string
+          example: [C:\path\to\file.jpg]
+      example:
+        board: b
+        body: This is a new thread on board /b/
+        files: [C:\path\to\file.jpg]
+
+    Reply:
+      description: Reply data.
+      type: object
+      required:
+        - board
+        - thread
+      properties:
+        thread:
+          type: integer
+          description: ID of the thread to reply to.
+          example: 1
+        board:
+          type: string
+          description: Board where the reply is to be posted (e.g., 'b').
+          example: b
+        name:
+          type: string
+          description: Name of the poster.
+        email:
+          type: string
+          description: Email of the poster.
+        spoiler:
+          type: boolean
+          description: Marks attached files as spoiler.
+        body:
+          type: string
+          description: The message of the reply.
+          example: This is a new reply to thread \#1 of board /b/
+        embed:
+          type: string
+          description: URL for an embedded media link (YouTube, Spotify...).
+        password:
+          type: string
+          description: Password used to delete or edit the reply.
+        sage:
+          type: boolean
+          description: Replaces email with 'rabbia' and prevents bumping the thread.
+        files:
+          type: array
+          description: Paths of the files to attach to the reply.
+          items:
+            type: string
+          example: [C:\path\to\file1.mp4, C:\path\to\file2.webm]
+      example:
+        thread: 1
+        board: b
+        body: This is a new reply to thread \#1 of board /b/
+        files: [C:\path\to\file1.mp4, C:\path\to\file2.webm]
+
+    SuccessResponse:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          description: ID of the submitted thread or reply
+          type: integer
+          example: 1
+      example:
+        id: 1
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          description: Error describing the failure in submitting the thread/reply
+          type: string
+          example: error
+      example:
+        error: error

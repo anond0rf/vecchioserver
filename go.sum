@@ -4,8 +4,8 @@ github.com/PuerkitoBio/goquery v1.10.0 h1:6fiXdLuUvYs2OJSvNRqlNPoBm6YABE226xrbav
 github.com/PuerkitoBio/goquery v1.10.0/go.mod h1:TjZZl68Q3eGHNBA8CWaxAN7rOU1EbDz3CWuolcO5Yu4=
 github.com/andybalholm/cascadia v1.3.2 h1:3Xi6Dw5lHF15JtdcmAHD3i1+T8plmv7BQ/nsViSLyss=
 github.com/andybalholm/cascadia v1.3.2/go.mod h1:7gtRlve5FxPPgIgX36uWBX58OdBsSS6lUvCFb+h7KvU=
-github.com/anond0rf/vecchioclient v1.0.0-beta.2 h1:j/vOygxSXv6kbnXMgvUKKJT5FJKapgUzwUvc4DlesHE=
-github.com/anond0rf/vecchioclient v1.0.0-beta.2/go.mod h1:ssam0ly6VjxVe/7ml+QaGuwMH8a6jLjq77Bm2HOXGrU=
+github.com/anond0rf/vecchioclient v1.0.0-beta.3 h1:Gc860vcxuC5il3+4zgo79+bUHrLp/Pev3ULsCP1eOXs=
+github.com/anond0rf/vecchioclient v1.0.0-beta.3/go.mod h1:uMDIT0iChzBKDTCV8cGGhXKO1WbL/SrlVsHvn9xQHZI=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/getkin/kin-openapi v0.128.0 h1:jqq3D9vC9pPq1dGcOCv7yOp1DaEe7c/T1vzcLbITSp4=

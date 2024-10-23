@@ -3,7 +3,7 @@ module github.com/anond0rf/vecchioserver
 go 1.23.2
 
 require (
-	github.com/anond0rf/vecchioclient v1.0.0-beta.2
+	github.com/anond0rf/vecchioclient v1.0.0-beta.3
 	github.com/getkin/kin-openapi v0.128.0
 	github.com/labstack/echo/v4 v4.12.0
 	github.com/swaggo/echo-swagger v1.4.1

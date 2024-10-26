@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 [![English](https://img.shields.io/badge/lang-en-blue.svg)](README-en.md) [![Italiano](https://img.shields.io/badge/lang-it-blue.svg)](README.md) 
-![License](https://img.shields.io/github/license/anond0rf/vecchioserver) [![GitHub Pre-Release](https://img.shields.io/github/v/release/anond0rf/vecchioserver?include_prereleases&label=pre-release)](https://github.com/anond0rf/vecchioserver/releases) [![Go Report Card](https://goreportcard.com/badge/github.com/anond0rf/vecchioserver)](https://goreportcard.com/report/github.com/anond0rf/vecchioserver) [![Go Version](https://img.shields.io/github/go-mod/go-version/anond0rf/vecchioserver)](https://github.com/anond0rf/vecchioserver)
+![License](https://img.shields.io/github/license/anond0rf/vecchioserver) [![GitHub Release](https://img.shields.io/github/v/release/anond0rf/vecchioserver?label=release)](https://github.com/anond0rf/vecchioserver/releases) [![Go Report Card](https://goreportcard.com/badge/github.com/anond0rf/vecchioserver)](https://goreportcard.com/report/github.com/anond0rf/vecchioserver) [![Go Version](https://img.shields.io/github/go-mod/go-version/anond0rf/vecchioserver)](https://github.com/anond0rf/vecchioserver)
 <br />
 <div align="center">
   <a href="https://github.com/anond0rf/vecchioserver">
